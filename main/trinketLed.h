@@ -11,7 +11,9 @@ void setLedColor(const char color[]) {
     strip.setPixelColor(0, 64, 0, 0);
   } else if (color == "green") {
     strip.setPixelColor(0, 0, 64, 0);
-  } else if (color == "orange") {
+  } else if (color == "white") {
+    strip.setPixelColor(0, 64, 64, 64);
+  }else if (color == "orange") {
     strip.setPixelColor(0, 64, 32, 0);
   } else if (color == "black") {
     strip.setPixelColor(0, 0, 0, 0);

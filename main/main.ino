@@ -1,9 +1,9 @@
-
-
-#include <FlashAsEEPROM.h>
+#include <Arduino.h>
 
 #include "fuseegelee.h"
 #include "trinketLed.h"
+#include "payloads.h"
+#include "capTouch.h"
 
 // Contains fuseeBin and FUSEE_BIN_LENGTH
 #include "hekate_ctcaer_3.0.h"
@@ -12,19 +12,31 @@
 
 void setup()
 {
+  initCapTouch(A0,30); //depends on capacitive size of ground and pin
   ledInit();
+
+  const int maxPayloads = 2;
+  payload pls[maxPayloads] = {{HEKATE_3_SIZE, hekate_3, "white"}, {SX_LOADER_SIZE, sx_loader, "red2"}};
+
+  int selectedPayload = 1;
+
   if (usbInit() == -1) sleepDeep(-1);
 
   int currentTime = 0;
   while (!searchTegraDevice())
   {
     currentTime = millis();
-    ledBlink("orange", 1, 200);
+    ledBlink(pls[selectedPayload].color, 1, 200);
+
+    if(clicked()){
+      selectedPayload++;
+      selectedPayload = selectedPayload%maxPayloads;
+    }
   }
 
   setupTegraDevice();
 
-  sendPayload(sx_loader, SX_LOADER_SIZE);
+  sendPayload(pls[selectedPayload].data, pls[selectedPayload].p_size);
 
   launchPayload();
 
