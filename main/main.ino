@@ -12,7 +12,7 @@
 
 void setup()
 {
-  initCapTouch(A0,30); //depends on capacitive size of ground and pin
+  initCapTouch(A0, 30); //depends on capacitive size of ground and pin
   ledInit();
 
   const int maxPayloads = 2;
@@ -22,15 +22,12 @@ void setup()
 
   if (usbInit() == -1) sleepDeep(-1);
 
-  int currentTime = 0;
   while (!searchTegraDevice())
   {
-    currentTime = millis();
     ledBlink(pls[selectedPayload].color, 1, 200);
 
-    if(clicked()){
-      selectedPayload++;
-      selectedPayload = selectedPayload%maxPayloads;
+    if (clicked()) {
+      selectedPayload = (selectedPayload + 1) % maxPayloads;
     }
   }
 
