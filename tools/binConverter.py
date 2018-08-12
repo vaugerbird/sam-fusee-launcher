@@ -1,6 +1,7 @@
 import sys
 import binascii
 import os
+import re
 
 
 def printProgressBar(progress):
@@ -35,6 +36,8 @@ fileIn = sys.argv[1]
 
 
 base = os.path.splitext(fileIn)[0]
+name = os.path.basename(base)
+name = re.sub('[^0-9a-zA-Z]+', '_', name)
 fileOut =  base + ".h"
 
 stringBuffer = "\t"
@@ -49,7 +52,7 @@ for byte in openFileToByte_generator(fileIn,16):
 
 
 
-stringBuffer = "#include <Arduino.h> \n \n#define FUSEE_BIN_SIZE " + str(countBytes) + "\nconst PROGMEM byte fuseeBin[FUSEE_BIN_SIZE] = {\n" + stringBuffer + "\n};"
+stringBuffer = "#include <Arduino.h> \n \n#define "+name.upper()+"_SIZE " + str(countBytes) + "\nconst PROGMEM byte "+name+"["+name.upper()+"_SIZE] = {\n" + stringBuffer + "\n};"
 
 print("\nwriting file: " + fileOut)
 text_file = open(fileOut, "w")
