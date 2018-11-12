@@ -7,7 +7,7 @@
 #include "capTouch.h"
 
 // Contains fuseeBin and FUSEE_BIN_LENGTH
-#include "hekate_ctcaer_3.2.h"
+#include "hekate_ctcaer_4.2.h"
 #include "sxLoader.h"
 
 FlashStorage(flash_payloadNR_INT, int);
@@ -18,7 +18,7 @@ void setup()
   ledInit();
 
   const int maxPayloads = 2;
-  payload pls[maxPayloads] = {{HEKATE_CTCAER_3_2_SIZE, hekate_ctcaer_3_2, "white"}, {SXLOADER_SIZE, sxLoader, "red2"}};
+  payload pls[maxPayloads] = {{HEKATE_CTCAER_4_2_SIZE, hekate_ctcaer_4_2, "white"}, {SXLOADER_SIZE, sxLoader, "red2"}};
 
   int selectedPayload = flash_payloadNR_INT.read();
   selectedPayload = (selectedPayload) % maxPayloads;
