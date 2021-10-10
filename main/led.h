@@ -1,30 +1,35 @@
 #include <Arduino.h>
-#include <Adafruit_DotStar.h>
-Adafruit_DotStar strip = Adafruit_DotStar(1, INTERNAL_DS_DATA, INTERNAL_DS_CLK, DOTSTAR_BGR);
-
-void ledInit() {
-  strip.begin();
-  strip.setPixelColor(0, 0, 0, 0);
-  strip.show();
-}
 
 void setLedColor(const char color[]) {
   if (color == "red") {
-    strip.setPixelColor(0, 64, 0, 0);
+    analogWrite(A1, 255); //R
+    analogWrite(A2, 0); //G
+    analogWrite(A3, 0); //B
   } else if (color == "green") {
-    strip.setPixelColor(0, 0, 64, 0);
+    analogWrite(A1, 0); //R
+    analogWrite(A2, 255); //G
+    analogWrite(A3, 0); //B
   } else if (color == "orange") {
-    strip.setPixelColor(0, 64, 32, 0);
+    analogWrite(A1, 255); //R
+    analogWrite(A2, 100); //G
+    analogWrite(A3, 0); //B
   } else if (color == "black") {
-    strip.setPixelColor(0, 0, 0, 0);
+    analogWrite(A1, 0); //R
+    analogWrite(A2, 0); //G
+    analogWrite(A3, 0); //B
   } else if (color == "blue") {
-    strip.setPixelColor(0, 5, 20, 64);
+    analogWrite(A1, 0); //R
+    analogWrite(A2, 0); //G
+    analogWrite(A3, 255); //B
   } else if (color == "red2") {
-    strip.setPixelColor(0, 64, 10, 10);
+    analogWrite(A1, 100); //R
+    analogWrite(A2, 0); //G
+    analogWrite(A3, 0); //B
   } else {
-    strip.setPixelColor(0, 255, 255, 255);
+    analogWrite(A1, 255); //R
+    analogWrite(A2, 255); //G
+    analogWrite(A3, 255); //B
   }
-  strip.show();
 }
 
 void ledBlink(const char color[], int count, int duration) {

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 #include "fuseegelee.h"
-#include "trinketLed.h"
+#include "led.h"
 
 // Contains fuseeBin and FUSEE_BIN_SIZE
 #include "hekate.h"
@@ -9,7 +9,6 @@
 
 void setup()
 {
-  ledInit();
   if (usbInit() == -1) sleepDeep(-1);
 
   while (!searchTegraDevice())
