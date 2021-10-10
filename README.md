@@ -1,15 +1,9 @@
 # sam-fusee-launcher
 Fusee payload injector for the Seeed Studio Seeeduino XIAO. Based on [sam fusee laucher](https://github.com/noemu/sam-fusee-launcher), which is based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher).
 
+# Build and Install
 
-# Install
-* Download and extract the firmware: [CTCaer Hekate 5.6.3](https://github.com/vaugerbird/sam-fusee-launcher/releases/tag/v0.1)
-* Connect the XIAO to your computer and quickly bridge the reset pins twice
-* Open the "Arduino" device and copy the extracted files on the device
-
-# Build
-
-#### Install Board
+#### Install Board to IDE
 Full guide: [Seeeduino XIAO software setup](https://wiki.seeedstudio.com/Seeeduino-XIAO/#software)
 
 Quick Summary:
