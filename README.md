@@ -12,7 +12,7 @@ Build and tested with Arduino SDK.
 
 
 # Build
-Full guide: [Seeeduino XIAO software setup](hhttps://wiki.seeedstudio.com/Seeeduino-XIAO/#software)
+Full guide: [Seeeduino XIAO software setup](https://wiki.seeedstudio.com/Seeeduino-XIAO/#software)
 
 Summary:
 * Download and install arduino IDE http://www.arduino.cc/en/Main/Software

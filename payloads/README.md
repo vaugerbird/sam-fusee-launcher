@@ -1,0 +1,2 @@
+# payloads
+I've chosen to not include payloads with my fork. I made this choice because recently, all of the payloads have been updating quite often. Hekate now includes an update.bin with all of their releases that automaticly chainloads the newest version, no matter the version that you inject. I also didn't inlcude fusee.bin because it needs to be updated with each new Atmosphere update.
