@@ -1,42 +1,42 @@
 
 
 # sam-fusee-launcher
-Fusee Launcher for the adafruit trinket m0 board. Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher).
+Fusee Launcher for the Seeed Studio Seeeduino XIAO. Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher).
 
 Build and tested with Arduino SDK.
 
 # Install
-* Download and extract the firmware: [CTCaer Hekate 3.2](https://github.com/noemu/sam-fusee-launcher/releases/tag/v0.1), [SXLoader 1.0](https://github.com/noemu/sam-fusee-launcher/releases/tag/v0.1-sx)
-* Connect the Trinket M0 and press the reset button twice
-* Open the TRINKETBOOT device and copy the extracted files on the device
+* Download and extract the firmware: [CTCaer Hekate 5.6.3](https://github.com/vaugerbird/sam-fusee-launcher/releases/tag/v0.1)
+* Connect the XIAO to your computer and quickly bridge the reset pins twice
+* Open the "Arduino" device and copy the extracted files on the device
 
 
 # Build
-Go through [trinket m0: arduino-ide-setup](https://learn.adafruit.com/adafruit-trinket-m0-circuitpython-arduino/arduino-ide-setup) and [trinket m0: arduino-ide-setup2](https://learn.adafruit.com/adafruit-trinket-m0-circuitpython-arduino/using-with-arduino-ide)
+Full guide: [Seeeduino XIAO software setup](hhttps://wiki.seeedstudio.com/Seeeduino-XIAO/#software)
 
 Summary:
 * Download and install arduino IDE http://www.arduino.cc/en/Main/Software
 * In Arduino: go to "Prefences" and add to "Additional Board Manager URLs" followin URL:
-*  `https://adafruit.github.io/arduino-board-index/package_adafruit_index.json`
-* go to "Tools > Board > Board Manager" and select Type: All and
-* Install "Adafruit SAMD Boards" and "Arduino - Boards SAMD"
-* Select the Trinket M0 with "Tools > Board > Adafruit Trinket M0"
+*  `https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json`
+* go to "Tools > Board > Board Manager" and select "Type: All" and
+* Input "Seeeduino XIAO" in the search box
+* Select the Seeeduino XIAO with "Tools > Board > Seeeduino XIAO M0"
 
 Go to Sketch > Include Library > Manage Libraries
-Install USBHOst, Adafruit DotStar and FlashStorage.
+Install USBHost and FlashStorage
 
-Connect the Trinket m0 to your computer and double Click on the Reset Button.
-Your computer should detect the Trinket m0 automatically (On win7 install this [driver](https://github.com/adafruit/Adafruit_Windows_Drivers/releases/download/2.2.0/adafruit_drivers_2.2.0.0.exe))
+Connect the XIAO to your computer and double click on the reset button.
+Your computer should detect the XIAO automatically
 
-Got to Tools > Port and select your conneted trinket m0
+Got to Tools > Port and select your conneted XIAO. (If the name does not show up, use Device Manager to find the proper COM port)
 
-Download this Repository, open main/main.ino with Arduino IDE.
+Download this repository, open main/main.ino with Arduino IDE.
 
 Then Verify/Compile (Ctrl + R)
 If no errors appear
 Upload (Ctrl + U).
 
-The trinket is ready for use.
+The XIAO is ready for use.
 
 LED is:
 * blinking orange -> searching for Switch in RCM mode
@@ -44,45 +44,22 @@ LED is:
 * off (except the power LED) -> finished successfully
 
 # Update the Payload
-download your favorit [payload](https://github.com/CTCaer/hekate/releases) as a `.bin` file.
-run the python script `tools/binConverter.py` with the path to the file as an argument:
+Download your favorite payload from its appropriate repository.
+Run the python script `tools/binConverter.py` with the path to the file as an argument:
 `python binConverter.py "C:\pathToMyPayload\hekateNew.bin` or just drag the .bin file on the script
 
-in the same folder as the .bin file is located, a new .h file should appear. Copy the new file to the main folder and in the main.ino go to line 6 `#include "hekate_ctcaer_2.3.h"` and rename it to your new file `#include "hekateNew.h"`
+In the same folder as the .bin file is located, a new .h file should appear. Copy the new file to the main folder and in the main.ino go to line 6 `#include "hekate_ctcaer_2.3.h"` and rename it to your new file `#include "hekateNew.h"`
 
 Then just compile and upload.
 
 # Hardware
-[trinket m0](https://www.adafruit.com/product/3500) + [liPoly charger](https://www.adafruit.com/product/2124) + Button + 150mAh LiPoly Battery
+[Seeedduino XIAO](https://www.amazon.com/gp/product/B09FSQM3K5/ref=crt_ewc_title_dp_1?ie=UTF8&psc=1&smid=A1YP59NGBNBZUR) + [Adafruit LiPoly Backpack](https://www.amazon.com/Adafruit-Trinket-LiIon-LiPoly-Backpack/dp/B00SK697AU/ref=sr_1_1?crid=17DZC8FSOW9ZN&dchild=1&keywords=adafruit+lipo+backpack&qid=1633812236&sprefix=adafruit+lipo%2Caps%2C240&sr=8-1) + Button + LiPoly Battery
 
 ![Layout](./images/layout.png)
 
-![front](./images/front.jpg)
-
-![back](./images/back.jpg)
-
-Power consumption:
-* Idle with error and power LED: 3.5mA
-* Idle with only power LED: 1.3mA
-* Running: 12.7mA
-
-# Finished Dongle
-Micro USB to USB C converter
-
-![microUsbToUsbC](./images/microUsbToUsbC.jpg)
-
-![inside](./images/innenLeben.jpg)
-
-![dongle](./images/dongle.jpg)
-
-![plugged](./images/plugged.jpg)
-
-[![Test](https://img.youtube.com/vi/RDU1Ht54ouM/0.jpg)](https://www.youtube.com/watch?v=RDU1Ht54ouM)
-
 # Thanks to:
+* [noemu](https://github.com/noemu/sam-fusee-launcher)
 * [atlas44](https://github.com/atlas44/sam-fusee-launcher)
 * [CTCaer](https://github.com/CTCaer/hekate)
-* [Ninoh-FOX](https://www.elotrolado.net/hilo_tutorial-crea-tu-propio-dongle-portatil-para-cargar-payloads-it-is-easy_2287822)
-* and everyone else i forgot
 
 
