@@ -6,6 +6,7 @@ Fusee payload injector for the Seeed Studio Seeeduino XIAO. Based on [sam fusee 
 * [Adafruit LiPoly Backpack](https://www.amazon.com/Adafruit-Trinket-LiIon-LiPoly-Backpack/dp/B00SK697AU/ref=sr_1_1?crid=17DZC8FSOW9ZN&dchild=1&keywords=adafruit+lipo+backpack&qid=1633812236&sprefix=adafruit+lipo%2Caps%2C240&sr=8-1)
 * Button (Literally any button will work)
 * LiPo Battery (Any should work as long as it's a 3.7v LiPo, I just used what I had lying around)
+* Some sort of RGB LED, I reused one from a broken RGB keyboard but almost anything works
 
 ### Wiring Diagram:
 ![Layout](./images/layout.png)
