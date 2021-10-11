@@ -7,6 +7,9 @@ Fusee payload injector for the Seeed Studio Seeeduino XIAO. Based on [sam fusee 
 * Button (Literally any button will work)
 * LiPo Battery (Any should work as long as it's a 3.7v LiPo, I just used what I had lying around)
 
+### Wiring Diagram:
+![Layout](./images/layout.png)
+
 # Build and Install
 
 ### Create/Update the Payload
@@ -45,8 +48,6 @@ Status LED meanings:
 * Blinking blue -> searching for Switch in RCM mode
 * Red -> no Switch found
 * Solid green, then off (except the power LED) -> finished successfully
-
-![Layout](./images/layout.png)
 
 # Thanks to:
 * [noemu](https://github.com/noemu/sam-fusee-launcher)
