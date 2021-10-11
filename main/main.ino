@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 #include "fuseegelee.h"
-#include "led.h"
+#include "led_ca.h"
 
 // Contains fuseeBin and FUSEE_BIN_SIZE
 #include "hekate.h"
@@ -13,7 +13,7 @@ void setup()
 
   while (!searchTegraDevice())
   {
-    ledBlink("orange", 1, 200);
+    ledBlink("blue", 1, 500);
   }
 
   setupTegraDevice();
