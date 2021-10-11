@@ -23,9 +23,9 @@ Quick Summary:
 <br>
 
 Status LED meanings:
-* Blinking orange -> searching for Switch in RCM mode
+* Blinking blue -> searching for Switch in RCM mode
 * Red -> no Switch found
-* Off (except the power LED) -> finished successfully
+* Solid green, then off (except the power LED) -> finished successfully
 
 # Update the Payload
 * Download your favorite payload from its appropriate repository.
