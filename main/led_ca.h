@@ -9,10 +9,6 @@ void setLedColor(const char color[]) {
     analogWrite(A1, 0); //R
     analogWrite(A2, 255); //G
     analogWrite(A3, 0); //B
-  } else if (color == "orange") {
-    analogWrite(A1, 255); //R
-    analogWrite(A2, 100); //G
-    analogWrite(A3, 0); //B
   } else if (color == "black") {
     analogWrite(A1, 0); //R
     analogWrite(A2, 0); //G
@@ -48,11 +44,10 @@ void ledBlink(const char color[], int count, int duration) {
 void sleepDeep(int errorCode) {
   // Turn off all LEDs and go to sleep. To launch another payload, press the reset button on the device.
   //delay(100);
-  digitalWrite(PIN_LED_RXL, HIGH);
-  digitalWrite(PIN_LED_TXL, HIGH);
-  digitalWrite(13, LOW);
   if (errorCode == 1) {
-    setLedColor("black");; //led to off
+    setLedColor("green"); //led to green
+    delay(3000);
+    setLedColor("black"); //led off
   } else {
     setLedColor("red"); //led to red
   }

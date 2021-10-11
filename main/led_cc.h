@@ -2,27 +2,27 @@
 
 void setLedColor(const char color[]) {
   if (color == "red") {
-    analogWrite(A1, 255); //VIN
+    digitalWrite(1, HIGH); //VIN
     digitalWrite(2, LOW); //R
     digitalWrite(3, HIGH); //G
     digitalWrite(4, HIGH); //B
   } else if (color == "green") {
-    analogWrite(A1, 255); //VIN
+    digitalWrite(1, HIGH); //VIN
     digitalWrite(2, HIGH); //R
     digitalWrite(3, LOW); //G
     digitalWrite(4, HIGH); //B
   } else if (color == "black") {
-    analogWrite(A1, 0); //VIN
+    digitalWrite(1, LOW); //VIN
     digitalWrite(2, LOW); //R
     digitalWrite(3, LOW); //G
     digitalWrite(4, LOW); //B
   } else if (color == "blue") {
-    analogWrite(A1, 255); //VIN
+    digitalWrite(1, HIGH); //VIN
     digitalWrite(2, HIGH); //R
     digitalWrite(3, HIGH); //G
     digitalWrite(4, LOW); //B
   } else {
-    analogWrite(A1, 255); //VIN
+    digitalWrite(1, HIGH); //VIN
     digitalWrite(2, LOW); //R
     digitalWrite(3, LOW); //G
     digitalWrite(4, LOW); //B
@@ -45,11 +45,9 @@ void ledBlink(const char color[], int count, int duration) {
 void sleepDeep(int errorCode) {
   // Turn off all LEDs and go to sleep. To launch another payload, press the reset button on the device.
   //delay(100);
-  digitalWrite(PIN_LED_RXL, HIGH);
-  digitalWrite(PIN_LED_TXL, HIGH);
   if (errorCode == 1) {
     setLedColor("green"); //led to green
-    delay(1000);
+    delay(3000);
     setLedColor("black"); //led off
   } else {
     setLedColor("red"); //led to red
