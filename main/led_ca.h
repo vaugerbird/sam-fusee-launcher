@@ -2,12 +2,12 @@
 
 void setLedColor(const char color[]) {
   if (color == "red") {
-    analogWrite(A1, 255); //R
+    analogWrite(A1, 100 //R
     analogWrite(A2, 0); //G
     analogWrite(A3, 0); //B
   } else if (color == "green") {
     analogWrite(A1, 0); //R
-    analogWrite(A2, 255); //G
+    analogWrite(A2, 100); //G
     analogWrite(A3, 0); //B
   } else if (color == "black") {
     analogWrite(A1, 0); //R
@@ -16,15 +16,11 @@ void setLedColor(const char color[]) {
   } else if (color == "blue") {
     analogWrite(A1, 0); //R
     analogWrite(A2, 0); //G
-    analogWrite(A3, 255); //B
-  } else if (color == "red2") {
-    analogWrite(A1, 100); //R
-    analogWrite(A2, 0); //G
-    analogWrite(A3, 0); //B
+    analogWrite(A3, 100); //B
   } else {
-    analogWrite(A1, 255); //R
-    analogWrite(A2, 255); //G
-    analogWrite(A3, 255); //B
+    analogWrite(A1, 100); //R
+    analogWrite(A2, 100); //G
+    analogWrite(A3, 100); //B
   }
 }
 

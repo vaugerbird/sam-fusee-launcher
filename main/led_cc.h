@@ -2,27 +2,27 @@
 
 void setLedColor(const char color[]) {
   if (color == "red") {
-    digitalWrite(1, HIGH); //VIN
+    analogWrite(A1, 100); //VIN
     digitalWrite(2, LOW); //R
     digitalWrite(3, HIGH); //G
     digitalWrite(4, HIGH); //B
   } else if (color == "green") {
-    digitalWrite(1, HIGH); //VIN
+    analogWrite(A1, 100); //VIN
     digitalWrite(2, HIGH); //R
     digitalWrite(3, LOW); //G
     digitalWrite(4, HIGH); //B
   } else if (color == "black") {
-    digitalWrite(1, LOW); //VIN
-    digitalWrite(2, LOW); //R
-    digitalWrite(3, LOW); //G
-    digitalWrite(4, LOW); //B
+    analogWrite(A1, 0); //VIN
+    digitalWrite(2, HIGH); //R
+    digitalWrite(3, HIGH); //G
+    digitalWrite(4, HIGH); //B
   } else if (color == "blue") {
-    digitalWrite(1, HIGH); //VIN
+    analogWrite(A1, 100); //VIN
     digitalWrite(2, HIGH); //R
     digitalWrite(3, HIGH); //G
     digitalWrite(4, LOW); //B
   } else {
-    digitalWrite(1, HIGH); //VIN
+    analogWrite(A1, 100); //VIN
     digitalWrite(2, LOW); //R
     digitalWrite(3, LOW); //G
     digitalWrite(4, LOW); //B

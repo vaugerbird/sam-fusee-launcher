@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
 #include "fuseegelee.h"
-#include "led_ca.h" //Uncomment for common anode LEDs
-//#include "led_cc.h" //Uncomment for common cathode LEDs
+#include "led_ca.h" //Uncomment and comment above for common anode LEDs
+//#include "led_cc.h" //Uncomment and comment above for common cathode LEDs
 //See README for more explanation of above 2 lines.
 
 // Contains fuseeBin and FUSEE_BIN_SIZE
